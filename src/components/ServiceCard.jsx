@@ -1,48 +1,85 @@
 // ServiceCard.js
-import React from "react";
+import React, { useEffect, useState } from "react";
+import TooltipModal from "./modal";
+import { AiTwotoneQuestionCircle } from "react-icons/ai";
+
 
 const ServiceCard = ({ service, isSelected, onSelect }) => {
+  const [show, setShow] = useState(false);
+
+  
+  const handleClose = () => setShow(false);
+ 
+
     const handleClick = () => {
-        onSelect(service);
+        onSelect(service,"service");
+    };
+
+    const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedOptionImage, setSelectedOptionImage] = useState(service?.image);
+
+
+    useEffect(() => {
+        if (service.options) {
+          const preSelectedOption = service.options.find(
+            (option) => option.selected
+          );
+          if (preSelectedOption) {
+            setSelectedOption(preSelectedOption.label);
+          }
+        }
+      }, [service.options]);
+
+    const handleOptionClick = (option) => {
+      setSelectedOption(option);
+      const selectedOptionObj = service.options.find(el => el.label === option);
+        if(selectedOptionObj) {
+            setSelectedOptionImage(selectedOptionObj.image);
+        }
     };
 
     return (
-        <div className={`booking_cards ${isSelected ? "primary_bg" : ""}`}>
-            <div className="cards_head p_15" onClick={handleClick}>
-              
+        <div className={`booking_cards`}>
+            <div className={`cards_head p_15 ${isSelected ? "primary_bg" : ""}`}onClick={handleClick}>
+                {/* Render service card content */}
                 <div className="question_mark">
-                    <img src={"/images/question.png"} alt="question_mark" />
-                    <div className="tooltip_box">
-                        <p>{service.tooltip}</p>
-                    </div>
+                    <AiTwotoneQuestionCircle onClick={()=>setShow(true)} />
+              <TooltipModal show={show} handleClose={handleClose} tooltip={service.tooltip}/>
                 </div>
                 <img
-                    src={service.image}
+                    src={selectedOptionImage}
                     className="cards_img"
-                    alt={service.title}
+                    alt={service?.title}
                 />
-                <h6>{service.title}</h6>
+                <h6>{service?.title}</h6>
             </div>
+            {service.options ?
             <div
                 className={`cards_footer ${
-                    service.options && service.options.length === 3
+                    service?.options && service?.options.length === 3
                         ? "Floor_option"
                         : "property_option"
                 }`}
             >
-                {isSelected &&
+                {
                     service.options &&
                     service.options.length !== 0 &&
                     service.options.map((el) => (
                         <div
                             className={`options ${
-                                el.selected ? "primary_selection" : ""
+                                selectedOption=== el.label ? "primary_selection" : ""
                             }`}
+                            onClick={() => handleOptionClick(el.label)}
                         >
                             <span>{el.label}</span>
                         </div>
                     ))}
             </div>
+:
+            <div className="optionn">
+
+            </div>
+}
         </div>
     );
 };

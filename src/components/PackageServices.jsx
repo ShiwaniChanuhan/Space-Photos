@@ -1,19 +1,26 @@
-
-import React from "react";
+// PackageServices.js
+import React, { useState } from "react";
+import { AiTwotoneQuestionCircle } from "react-icons/ai";
+import TooltipModal from "./modal";
 
 const PackageServices = ({ service, isSelected, onSelect }) => {
+
+    const [show, setShow] = useState(false);
+
+  
+    const handleClose = () => setShow(false);
     const handleClick = () => {
-        onSelect(service);
+        onSelect(service,"packaged");
     };
 
     return (
         <>
-            <div 
+            <div
                 className={`services_cards ${isSelected ? "secondary_bg" : ""}`}
                 onClick={handleClick}
             >
                 <div className="cards_head">
-                    <div className="question_mark">
+                    {/* <div className="question_mark">
                         <img src={"/images/question.png"} alt="question_mark" />
                         <div className="tooltip_box">
                             <p>
@@ -22,7 +29,11 @@ const PackageServices = ({ service, isSelected, onSelect }) => {
                                 incididunt ut labore et dolore magna aliqua
                             </p>
                         </div>
-                    </div>
+                    </div> */}
+                       <div className="question_mark">
+                    <AiTwotoneQuestionCircle onClick={()=>setShow(true)} />
+              <TooltipModal show={show} handleClose={handleClose} tooltip={service.tooltip}/>
+                </div>
                     <div className="service__img">
                    {   service.images.map((el)=>(
                     <img

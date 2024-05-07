@@ -1,28 +1,30 @@
-// AdditionalServices.js
-import React from "react";
+
+import React, { useState } from "react";
+import { AiTwotoneQuestionCircle } from "react-icons/ai";
+import TooltipModal from "./modal";
 
 const AdditionalServices = ({ service, isSelected, onSelect }) => {
+    const [show, setShow] = useState(false);
+
+  
+    const handleClose = () => setShow(false)
     const handleClick = () => {
         onSelect(service);
     };
 
+    
     return (
         <>
             <div
-                className={`booking_cards ${isSelected ? "primary_bg" : ""}`}
+                className={`booking_cards booking_cardss ${isSelected ? "primary_bg" : ""}`}
                 onClick={handleClick}
             >
                 <div className="cards_head p_8">
-                    <div className="question_mark">
-                        <img src={"/images/question.png"} alt="question_mark" />
-                        <div className="tooltip_box">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua
-                            </p>
-                        </div>
-                    </div>
+                 
+                              <div className="question_mark">
+                    <AiTwotoneQuestionCircle onClick={()=>setShow(true)} />
+              <TooltipModal show={show} handleClose={handleClose} tooltip={service.tooltip}/>
+                </div>
                     <img src={service.image} className="cards_img" alt="" />
                     <h6>{service.title}</h6>
                 </div>
