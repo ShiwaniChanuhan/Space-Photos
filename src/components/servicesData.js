@@ -5,7 +5,8 @@ const servicesData = [
     image: '/images/Visual_tours.png',
     tooltip: 'Estimated time at the property from 1h – 2h 30 min; 3D walkthrough internally and 360 panoramic images externally. The standard price includes up to 70 internal scans, £2.16 per extra scan. All Virtual tour will Include: 3D Tour Itself, 2D Snapshots, Teaser Videos,High-Resolution Floor Plan Image and 3-month free hosting (Can be extended at extra cost £10 p.m.)',
     price: 150, // Static price for 3D Visual tours
-    type:'service'
+    type:'service',
+    new:true
   },
   {
     id: 2,
@@ -17,8 +18,11 @@ const servicesData = [
       { label: 'Quality option', selected: true ,image:'/images/camera.png'}
     ],
     price: 100,
-    type:'service'
+    type:'service',
      // Static price for Property Photography
+     case:"camera",
+    new:true
+
   },
   {
     id: 3,
@@ -26,7 +30,9 @@ const servicesData = [
     image: '/images/video-camera.png',
     tooltip: 'Interior walkthrough video up to 3 minFilmed with a wide-angle phone camera and image stabilizer – GimbalLandscape modeNotes of any specific requests available when placing the bookingThe video will be made available via YouTube link (Quality 720p)',
     price: 200,
-    type:'service'
+    type:'service',
+    new:true
+
      // Static price for Walkthrough video
   },
   {
@@ -40,8 +46,11 @@ const servicesData = [
       { label: 'Lease Plan', selected: false,image:'/images/lease plan.png' }
     ],
     price: 120,
-    type:'service'
+    type:'service',
      // Static price for Floor Plan
+     case:"floor plan",
+    new:true
+
   },
   {
     id: 5,
@@ -49,7 +58,9 @@ const servicesData = [
     image: '/images/epc.png',
     tooltip: 'EPCs tell you how energy efficient a building is and give it a rating from A (very efficient) to G (inefficient). It is a legal requirement to have a valid Energy Performance Certificate (EPC) when a building is sold, rented or constructed. Properties up to 1200 sq.ft, extra will be charged 6p per SQ.FT',
     price: 80 ,
-    type:'service'
+    type:'service',
+    new:true
+
     // Static price for EPC
   }
 ];
@@ -62,6 +73,7 @@ const packagedServicesData = [
     tooltip: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     price: 150, // Static price for Photos + Floor Plan
     type:"packaged"
+    
   },
   {
     id: 2,
@@ -123,6 +135,7 @@ const additionalServicesData = [
     tooltip: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     price: 110, // Static price for Add furniture to floor plan
     type:"service",
+    case:"floor plan"
    
   }
 ];

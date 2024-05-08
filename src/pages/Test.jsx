@@ -19,26 +19,9 @@ const Test = () => {
   const [additional, setAdditional] = useState([]);
 
   useEffect(() => {
-    // Calculate the total cost when selectedServices or their options change
-    // let cost = 0;
-    // selectedServices.forEach((service) => {
-    //     cost += service?.price || 0; // Add base price of service
-    //     if (service?.options) {
-    //         service?.options.forEach((option) => {
-    //             if (option?.selected) {
-    //                 cost += option?.price || 0; // Add price of selected option
-    //             }
-    //         });
-    //         if (cost > 100) {
-    //             cost *= 0.9;
-    //         }
-    //     }
-    // });
-    // setTotalCost(cost);
+ let serviceCost = 0;
+  let packageCost = 0;
 
-    let serviceCost = 0;
-    let packageCost = 0;
-    
     selectedServices.forEach((service) => {
       if (service.type === "service") {
         serviceCost += service.price || 0;
@@ -72,8 +55,7 @@ const Test = () => {
     setPackagePrice(packageCost);
   }, [selectedServices]);
 
-
- const handleServiceSelect = (service, type) => {
+  const handleServiceSelect = (service, type) => {
     setSelectedServices((prevSelected) => {
       let updatedSelected = [...prevSelected];
       if (prevSelected.includes(service)) {
@@ -85,15 +67,19 @@ const Test = () => {
       }
 
       if (type === "service") {
-        if (prevSelected.includes(service)) {
-          const newSelected = servicesData.filter(
-            (selected) => selected !== service
-          );
-          setServices(newSelected);
-        } else {
-          setServices([...servicesData, service]);
-        }
+        const selectedcase = updatedSelected.map((service) => service?.case);
+        
+        let additionalServicesFiltered = additionalServicesData.filter(
+          (service) => selectedcase.includes(service.case)
+        );
 
+        if (prevSelected.includes(service)) {
+          additionalServicesFiltered = updatedSelected.filter(
+            (servicedata) =>
+              servicedata.case && servicedata.case !== service.case
+          );
+        }
+       
         const selectedImages = updatedSelected.map((service) => service?.image);
 
         const matchingPackagedService = packagedServicesData.filter(
@@ -102,6 +88,7 @@ const Test = () => {
               selectedImages.includes(image)
             )
         );
+
         matchingPackagedService.sort((a, b) => {
           const imagesALength = a.images.length;
           const imagesBLength = b.images.length;
@@ -109,19 +96,29 @@ const Test = () => {
         });
         const value =
           matchingPackagedService[matchingPackagedService.length - 1];
+
         if (value) {
           setPackaged([value]);
 
           updatedSelected = [
             value,
-            ...updatedSelected.filter((service) => service?.type === "service"),
+
+            ...updatedSelected.filter(
+              (service) => service?.type === "service" && service?.new
+            ),
+            ...additionalServicesFiltered,
           ];
         } else {
           updatedSelected = [
-            ...updatedSelected.filter((service) => service?.type === "service"),
+            ...updatedSelected.filter(
+              (service) => service?.type === "service" && service?.new
+            ),
+            ...additionalServicesFiltered,
           ];
         }
       } else if (type === "packaged") {
+        let additionalServicesFiltered;
+
         if (prevSelected.includes(service)) {
           const matchingServicesToRemove = servicesData.filter(
             (individualService) => {
@@ -130,46 +127,53 @@ const Test = () => {
               );
             }
           );
-          //   console.log(matchingServicesToRemove, "dsfkjdfkj");
+
+          
           updatedSelected = updatedSelected.filter(
             (selected) => !matchingServicesToRemove.includes(selected)
           );
-          const removed = services.filter((el) =>
-            matchingServicesToRemove.some((elo) => el !== elo)
-          );
-          //   console.log(removed);
-          setPackaged([]);
+       
+
+          additionalServicesFiltered = updatedSelected.filter((servicedata) => {
+            if (servicedata.case == "camera") {
+              return;
+            } else if (servicedata.case == "floor plan") {
+              return;
+            } else {
+              return servicedata;
+            }
+          });
+          updatedSelected = [...additionalServicesFiltered];
         } else {
-          const matchingServicesToAdd = servicesData.filter(
+          let matchingServicesToAdd = servicesData.filter(
             (individualService) => {
               return service.images.some(
                 (image) => individualService.image === image
               );
             }
           );
-          setServices([...matchingServicesToAdd]);
-          updatedSelected = [...matchingServicesToAdd, service];
-          setPackaged([service]);
+
+          const selectedcase = matchingServicesToAdd.map(
+            (service) => service?.case
+          );
+         
+          additionalServicesFiltered = additionalServicesData.filter(
+            (service) => selectedcase.includes(service.case)
+          );
+
+          updatedSelected = [
+            ...matchingServicesToAdd,
+            service,
+            ...additionalServicesFiltered,
+          ];
         }
       }
-else if(type==="additional"){
-    if (prevSelected.includes(service)) {
-        console.log(service.type,"type")
-    }
-       
-
-       
-        
-
-      }
-
-
 
       return updatedSelected;
     });
   };
 
-  console.log(selectedServices, "sdfsjj")
+  console.log(selectedServices, "sdfsjj");
 
   return (
     <div className="home">
