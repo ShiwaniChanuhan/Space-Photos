@@ -8,8 +8,9 @@ import {
 import ServiceCard from "../components/ServiceCard";
 import PackageServices from "../components/PackageServices";
 import AdditionalServices from "../components/AdditionalServices";
+import { Link, useNavigate } from "react-router-dom";
 
-const Test = () => {
+const Test = ({setStep}) => {
   const [selectedServices, setSelectedServices] = useState([]);
   const [totalCost, setTotalCost] = useState(0);
 
@@ -17,7 +18,7 @@ const Test = () => {
   const [packaged, setPackaged] = useState([]);
   const [services, setServices] = useState([]);
   const [additional, setAdditional] = useState([]);
-
+const navigate=useNavigate();
   useEffect(() => {
  let serviceCost = 0;
   let packageCost = 0;
@@ -179,7 +180,7 @@ const Test = () => {
     <div className="home">
       <section>
         <div className="container">
-          <div className="section_steps">
+          {/* <div className="section_steps">
             <h2>New Booking</h2>
             <div className="steps">
               <div className="step_1 steps_inner">
@@ -199,7 +200,7 @@ const Test = () => {
                 <h6>Finish</h6>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* Your JSX content */}
           <div className="section_content">
             <div className="services_required">
@@ -263,8 +264,10 @@ const Test = () => {
                   </div>
                 )}
               </div>
-              <div className="continue_btn">
-                <a href="{}">Continue</a>
+              <div className="continue_btn" onClick={()=>{setStep((prev)=>prev+1); navigate("/detail")}}>
+             <button>Continue</button>
+                  
+                
               </div>
             </div>
           </div>

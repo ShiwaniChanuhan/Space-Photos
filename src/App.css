@@ -1,23 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
 }
-.container {
-  width: 1170px;
-  margin: 0 auto;
-  padding: 0 15px;
 
-}
-.booking_cards{
+.booking_cards {
   cursor: pointer;
   border-radius: 8px;
   position: relative;
 }
-.services_cards{
-  border: 1px solid #ECEDEB;
+.services_cards {
+  border: 1px solid #ecedeb;
   cursor: pointer;
   border-radius: 8px;
   position: relative;
@@ -30,19 +25,20 @@
 .options {
   background-color: #c1fa8866;
 }
-.booking_cards h6,
-.services_cards h6 {
+.booking_cards h6, .services_cards h6 {
   font-size: 16px;
   font-weight: 500;
+  margin-bottom: 0;
+  padding-bottom: 8px;
 }
 .booking_cards,
 .services_cards {
   text-align: center;
 }
-.p_15{
+.p_15 {
   padding: 15px;
 }
-.pb_0{
+.pb_0 {
   padding-bottom: 0;
 }
 .booking_cards .cards_img {
@@ -60,13 +56,13 @@
   font-size: large;
 }
 .booking_cards:hover .optionn {
-  border-color: #BEEF8E;
+  border-color: #beef8e;
 }
-.booking_cards:hover .cards_head{
-  border-color: #BEEF8E;
+.booking_cards:hover .cards_head {
+  border-color: #beef8e;
 }
-.booking_cards:hover .cards_footer{
-  border-color: #BEEF8E;
+.booking_cards:hover .cards_footer {
+  border-color: #beef8e;
 }
 /* .booking_cards .cards_head:hover{
   border-color: #BEEF8E;
@@ -75,18 +71,18 @@
   border-color: #BEEF8E;
 } */
 .services_cards:hover {
-  border: 1px solid #BEEF8E;
+  border: 1px solid #beef8e;
 }
-.card_active{
+.card_active {
   background-color: #c7fd91;
 }
 .primary_bg {
   /* background-color: #c0fd83; */
-  background-color: #D1FEA4;
+  background-color: #d1fea4;
 }
-.secondary_bg{
-  background-color: #D1FEA4;
-  border: 2px solid #BEEF8E;
+.secondary_bg {
+  background-color: #d1fea4;
+  border: 2px solid #beef8e;
 }
 .new_booking_heading h5 {
   font-size: 20px;
@@ -96,7 +92,7 @@
   font-size: 12px;
 }
 .cards_footer {
-  border: 1px solid #ECEDEB;
+  border: 1px solid #ecedeb;
   border-radius: 0 0 8px 8px;
 }
 .primary_bg .optionn {
@@ -104,26 +100,31 @@
   height: 25px;
   border-radius: 0px 0px 8px 8px;
 }
-.primary_bg+.optionn{
+.primary_bg + .optionn {
   /* background-color: #c0fd83; */
-  background-color: #D1FEA4;
-
+  background-color: #d1fea4;
 }
-.booking_cardss{
-  border: 1px solid #ECEDEB;
+.booking_cardss {
+  border: 1px solid #ecedeb;
   border-radius: 8px;
 }
-.booking_cardss .cards_head{
+.booking_cardss .cards_head {
   border-width: 0;
   border-radius: 0;
 }
 .booking_cardss:hover {
-  border: 1px solid #BEEF8E;
+  border: 1px solid #beef8e;
+}
+.select__services {
+  padding-bottom: 19px !important;
+}
+.Additional__services {
+  padding: 20px 8px !important;
 }
 .optionn {
-  border-right: 1px solid #ECEDEB;
-  border-bottom: 1px solid #ECEDEB;
-  border-left: 1px solid #ECEDEB;
+  border-right: 1px solid #ecedeb;
+  border-bottom: 1px solid #ecedeb;
+  border-left: 1px solid #ecedeb;
   height: 24px;
   border-radius: 0 0 8px 8px;
 }
@@ -132,19 +133,20 @@
   border-right: 1px solid;
   border-top: 1px solid;
   border-left: 1px solid;
-  border-color: #ECEDEB;
+  border-color: #ecedeb;
+  padding-bottom: 0;
 }
 .property_option {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.Floor_option{
+.Floor_option {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .primary_selection {
   /* background-color: #c0fd83; */
-  background-color: #D1FEA4;
+  background-color: #d1fea4;
 }
 .select_services,
 .additional_services,
@@ -172,7 +174,7 @@
   gap: 15px;
   justify-content: center;
 }
-.p_8{
+.p_8 {
   padding: 8px;
 }
 .total_cost .total_cost_head {
@@ -183,7 +185,7 @@
 }
 .total_cost_content h4 {
   font-size: 36px;
-  color: #31930F;
+  color: #31930f;
 }
 .total_cost_content h5 {
   font-size: 20px;
@@ -203,21 +205,23 @@
 .total_cost {
   padding: 60px 0 40px 0;
 }
-.continue_btn a {
-  background-color: #7FFF00;
+.continue_btn button{
+  background-color: #7fff00;
   text-decoration: none;
   color: #000;
   padding: 10px 50px;
   font-size: 16px;
   border-radius: 8px;
   display: inline-block;
+  border-style: none;
+  font-weight: 400;
 }
 .continue_btn {
   text-align: center;
   padding-top: 5px;
 }
-.step_active{
-  background-color: #B3F273;
+.step_active {
+  background-color: #b3f273;
 }
 .steps h6 {
   font-size: 16px;
@@ -236,7 +240,7 @@
   border-radius: 50%;
   padding: 5px;
   margin: 0 auto;
-  border: 4px solid #B3F273;
+  border: 4px solid #b3f273;
 }
 .section_steps h2 {
   font-size: 32px;
@@ -266,7 +270,7 @@
   font-size: 16px;
   font-weight: 600;
 }
-.additional_info{
+.additional_info {
   padding-bottom: 30px;
 }
 .question_mark .tooltip_box {
@@ -277,13 +281,13 @@
   padding: 10px;
   border-radius: 8px;
   opacity: 0;
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
   display: none;
   width: 250px;
   bottom: 38px;
 }
 .tooltip_box:after {
-  content: '';
+  content: "";
   background-color: #eeeeee;
   width: 15px;
   height: 15px;
@@ -292,38 +296,389 @@
   right: 14px;
   bottom: -8px;
   transform: rotate(45deg);
-} 
-.question_mark:hover .tooltip_box{
+}
+.question_mark:hover .tooltip_box {
   opacity: 1;
   display: block;
 }
-.question_mark .tooltip_box p{
+.question_mark .tooltip_box p {
   font-size: 12px;
   text-align: start;
 }
-.continue_btn a:hover{
-  opacity: .7;
+.continue_btn a:hover {
+  opacity: 0.7;
 }
-@media(max-width: 991px){
-  .container {
-    width: 960px;
+
+
+/* -----------------Navbar----------------------------- */
+
+.book_now {
+  background-color: #9bff37;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.nav_logo {
+  width: 110px;
+}
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+.navbar-toggler {
+  border: unset !important;
+}
+
+.social_icon {
+  font-size: 24px;
+  margin: 0 8px;
+  margin-bottom: 10px;
+}
+
+/* ______________________DEtail PAGE___________________ */
+
+.heading1 {
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+.heading2{
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+.heading {
+  font-weight: 600;
+  font-size: 20px;
+ 
+}
+.main-prop {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  margin-top: 20px;
+}
+
+
+/* ____________________LEFT SIDE_________________________________ */
+.btn-opt {
+margin-top: 20px;
+
+}
+.btn-opt .btn {
+  background-color: #d1fea4;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+font-weight: 500;
+display: block;
+}
+.btn-opt .btn1 {
+  margin-top: 10px;
+  border: 1px solid #ECEDEB;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 266px;
+  width: 100%;
+}
+.datepicker{
+  margin-top: 10px;
+}
+
+.property-form2 p{
+ font-weight: 600;
+ font-size: 15px;
+ text-align: center ;
+ color:#a9ada5;
+
+ margin-bottom: 0 !important;
+}
+/* ______________RIGHT SIDE__________________________ */
+.property-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+}
+.property-form2 {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+}
+
+.property-form label {
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.property-form input,
+.property-form select,
+.property-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 11px;
+  color: #7e7979;
+}
+.property-form input::placeholder,
+.property-form textarea::placeholder {
+  color: #7e7979;
+}
+
+.button {
+  background-color: #7fff00;
+  border-style: none;
+  border-radius: 8px;
+  padding: 10px;
+}
+.btn-opt2 {
+  display: flex;
+  flex-direction: column;
+
+  justify-items: center;
+  text-align: center;
+  gap: 10px;
+  width: 40%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.button1 {
+  background-color: #e9e9e9;
+  border-style: none;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+
+/* -------------------------------CHECKOUT PAGE_________________________ */
+
+.order-form{
+display: flex;
+gap: 5px;
+flex-direction: column;
+
+
+}
+
+.order-form input{
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 11px;
+  color: #7e7979;
+}
+
+
+/* ________________BILING______________________ */
+.billing{
+ margin-top: 10px;
+background-color: #E3E3E3;
+  border-radius: 8px;
+  padding: 20px;
+ 
+}
+.radio{
+  display: flex;
+  gap:20px;
+  font-size: 16px;
+  font-weight: 600;
+ 
+}
+
+.radio input[type="radio"] {
+  display: none;
+}
+.custom-radio {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  position: relative;
+  margin-right: 20px;
+}
+
+.custom-radio::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+input[type="radio"]:checked + .custom-radio::after {
+  opacity: 1;
+  background-color: #60BE03;
+}
+
+input[type="radio"]:checked + .custom-radio {
+  border-color:#60BE03;
+}
+
+.checkbox {
+display: flex;
+gap:10px;
+border-top: 1px solid #BDBDBD;
+margin-top: 20px;
+}
+
+.checkbox p{
+  padding-top: 18px;
+}
+
+.subtotal.table td{
+  font-size: 12px;
+}
+  .table {
+    border-collapse: inherit !important;
+    border-radius: 0.5rem !important;
+    border: 1px solid #E3E3E3;
+    margin-top: 40px;
   }
+  .table__tr .table__td {
+    width: 50%;
+  }
+  .table__tr .table__tdd {
+    width: 40%;
+  }
+
+.title{
+  font-weight: 600; 
+  font-size: 16px;
+  padding-right: 20px;
+}
+
+.order-btn{
+  background-color: #7FFF00;
+
+  border-style: none;
+  border-radius: 8px;
+  padding: 10px;
+  width: 20%;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.section_steps{
+  padding: 0 12px;
+}
+/* __________________________media query________________________________ */
+
+@media (min-width: 767px) {
+  .head{
+    display: none;
+  }
+}
+@media (max-width: 1199px){
   .new_booking_content {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
 }
-@media(max-width: 767px){
-  .container {
-    width: 100%;
+.table {
+  margin-top: 65px;
+}
+.heading2 {
+  display: none;
+} 
+}
+@media (max-width: 991px) {
+
+  .main-prop{
+    gap: 0;
   }
-  .new_booking_content {
+  .new_booking_content, .additional_services_content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .booking_cardss, .services_cards, .booking_cards  {
+    width: calc(33.33% - 15px);
+  }
+  .main-prop {
+    grid-template-columns: 1fr;
+}
+.order-btn {
+
+  margin-top: 30px;
+}
+
+/* _____________DETAIL PAGE___________________ */
+.property-form {
+ 
+  width: 60%;
+  margin: auto;
+}
+.btn-opt2 {
+  width: 48%;
+}
+
+/* ________________BILLING PAGE____________________ */
+
+
+}
+@media (max-width: 767px) {
+  .table {
+    margin-top: 40px;
+}
+  /* .new_booking_content {
     grid-template-columns: 1fr 1fr 1fr;
   }
   .additional_services_content {
     grid-template-columns: 1fr 1fr 1fr;
+  } */
+  .booking_cardss, .services_cards, .booking_cards  {
+    width: calc(50% - 15px);
   }
+
+   /* __________________DETAIL PAGE___________________ */
+   .main-prop {
+    grid-template-columns: 1fr;
 }
-@media(max-width: 575px){
+
+.btn-opt {
+ 
+  width: 100%;
+  }
+  .btn-opt2 {
+   
+    width: 55%;
+   
+}
+
+/* ________________BILLING PAGE____________________ */
+
+.head{
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+.heading2 {
+  display: none;
+} 
+.order-btn {
+  width: 40%;
+  margin-top: 30px;
+}
+}
+@media (max-width: 575px) {
   .new_booking_content {
     grid-template-columns: 1fr 1fr;
   }
@@ -332,51 +687,137 @@
   }
   .total_cost_content {
     padding-bottom: 20px;
-}
-.section_steps span {
-  width: 130px;
-}
-}
-@media(max-width: 460px){
-  .new_booking_content {
-    grid-template-columns: 1fr;
-  }
-  .additional_services_content {
-    grid-template-columns: 1fr;
   }
   .section_steps span {
-    width: 80px;
-}
-
-
-
-}
-
-/* -----------------Navbar----------------------------- */
-
-  .book_now {
-    background-color: #9BFF37;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
+    width: 130px;
   }
-.nav_logo {
-    
-    width: 110px;
+  .service__img img {
+    width: 35px !important;
+    height: 35px !important;
+}
+   /* __________________DETAIL PAGE___________________ */
+   .main-prop {
+    grid-template-columns: 1fr;
+}
+
+.btn-opt {
+ 
+  width: 100%;
+  }
+  .btn-opt2 {
    
-  }
-.navbar-toggler:focus{
-  box-shadow: none !important;
+    width: 55%;
+   
 }
-.navbar-toggler{
-  border: unset !important;
+/* ________________BILLING PAGE____________________ */
+
+.head{
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+.heading2 {
+  display: none;
+} 
+.order-btn {
+  width: 40%;
+  margin-top: 30px;
 }
 
-.social_icon {
+.booking_cards .cards_footer span {
+  font-size: 10px;
+}
+
+.total_cost_content {
+  flex-flow: column;
+  padding-bottom: 0;
+}
+.total_cost .total_cost_head {
   font-size: 24px;
-  margin: 0 8px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+}
+@media (
+  max-width: 480px) {
+  /* .new_booking_content {
+    grid-template-columns: 1fr 1fr;
+  } */
+
+  .new_booking_content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.services_cards {
+  width: calc(50% - 15px);
+}
+.additional_services_content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.booking_cardss {
+  width: calc(50% - 15px);
+}
+.booking_cards {
+  width: calc(50% - 10px);
+}
+
+  .section_steps span {
+    width: 80px;
+  }
+  .continue_btn a {
+    width: calc(100% - 20px);
+}
+  .booking_cards h6, .services_cards h6 {
+    font-size: 14px;
+  }
+  .total_cost {
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 9;
+    padding: 20px;
+    margin: auto -12px;
+  }
+  /* __________________DETAIL PAGE___________________ */
+  .main-prop {
+    grid-template-columns: 1fr;
+}
+
+.btn-opt {
+ 
+  width: 100%;
+  }
+  .btn-opt2 {
+   
+    width: 58%;
+   
+}
+.property-form {
+ 
+  width: 100%;
+  margin: auto;
+}
+
+.heading1{
+  text-align: start;
   margin-bottom: 10px;
+}
+
+/* ________________BILLING PAGE____________________ */
+
+
+.head{
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+.heading2 {
+  display: none;
+} 
+.order-btn {
+  width: 40%;
+  margin-top: 30px;
+}
 }

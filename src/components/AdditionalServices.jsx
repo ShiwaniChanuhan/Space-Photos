@@ -19,7 +19,7 @@ const AdditionalServices = ({ service, isSelected, onSelect }) => {
                 className={`booking_cards booking_cardss ${isSelected ? "primary_bg" : ""}`}
                 onClick={handleClick}
             >
-                <div className="cards_head p_8">
+                <div className="cards_head p_8 Additional__services">
                  
                               <div className="question_mark">
                     <AiTwotoneQuestionCircle onClick={()=>setShow(true)} />

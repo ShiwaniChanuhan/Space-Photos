@@ -19,7 +19,7 @@ const PackageServices = ({ service, isSelected, onSelect }) => {
                 className={`services_cards ${isSelected ? "secondary_bg" : ""}`}
                 onClick={handleClick}
             >
-                <div className="cards_head">
+                <div className="cards_head select__services">
                     {/* <div className="question_mark">
                         <img src={"/images/question.png"} alt="question_mark" />
                         <div className="tooltip_box">

@@ -7,7 +7,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div style={{ backgroundColor: "#E3E3E3" }} className="py-md-5 py-4">
+    <div style={{ backgroundColor: "#E3E3E3" }} className="py-md-5 py-4 footer">
       <Container >
         <Row className="justify-content-between row-gap-3">
           <Col className="col-lg-6 col-12 col-md-4 text-lg-start text-center pb-3">

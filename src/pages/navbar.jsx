@@ -11,25 +11,7 @@ const MainNavbar = () => {
   return (
  
     <div className="container">
-      {/* <nav className='nav'>
-        
-        <img src="/images/logo.png"/>
-        <div className="list" >
-
-        
-        <Link className='Link' to="">About us</Link>
-        <Link className='Link' to="">Products And Services</Link>
-        <Link className='Link' to="">Portfolio</Link>
-        <Link className='Link' to="">Shop</Link>
-        <Link className='Link' to="">Blog </Link>
-        <Link className='Link' to="">Contact us </Link>
-        </div>
-
-
-
-        <button>Book Now</button>
-      </nav> */}
-      <Navbar expand="lg" className="bg-body-tertiary">
+<Navbar expand="lg" className="bg-body-tertiary">
       <Container className='w-100 justify-content-between'>
         <Navbar.Brand href="#home">
           <img className='nav_logo' src="/images/logo.png"/>
