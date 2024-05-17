@@ -40,6 +40,9 @@ const ServiceCard = ({ service, isSelected, onSelect }) => {
   const [selectedOptionImage, setSelectedOptionImage] = useState(
     service?.image
   );
+  const [selectedTooltip, setSelectedtooltip] = useState(
+    service?.tooltip
+  );
 
   useEffect(() => {
     if (service.options) {
@@ -57,6 +60,7 @@ const ServiceCard = ({ service, isSelected, onSelect }) => {
     const selectedOptionObj = service.options.find((el) => el.label === option);
     if (selectedOptionObj) {
       setSelectedOptionImage(selectedOptionObj.image);
+      setSelectedtooltip(selectedOptionObj.tooltip)
     }
   };
 
@@ -72,7 +76,7 @@ const ServiceCard = ({ service, isSelected, onSelect }) => {
           <TooltipModal
             show={show}
             handleClose={handleClose}
-            tooltip={service.tooltip}
+            tooltip={selectedTooltip}
           />
         </div>
         <img

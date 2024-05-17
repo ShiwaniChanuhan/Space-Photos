@@ -679,6 +679,18 @@ margin-top: 20px;
 }
 }
 @media (max-width: 575px) {
+  .custom-modal{
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+  }
+.modal {
+  display: flex !important;
+  align-items: center;
+}
+.custom-modal{
+  min-height: 600px !important;
+  height: 600px !important;
+}
   .new_booking_content {
     grid-template-columns: 1fr 1fr;
   }
@@ -821,3 +833,4 @@ margin-top: 20px;
   margin-top: 30px;
 }
 }
+
