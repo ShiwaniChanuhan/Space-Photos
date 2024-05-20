@@ -1,6 +1,6 @@
 // PackageServices.js
 import React, { useState } from "react";
-import { AiTwotoneQuestionCircle } from "react-icons/ai";
+import { GoQuestion } from "react-icons/go";
 import TooltipModal from "./modal";
 
 const PackageServices = ({ service, isSelected, onSelect }) => {
@@ -31,7 +31,7 @@ const PackageServices = ({ service, isSelected, onSelect }) => {
                         </div>
                     </div> */}
                        <div className="question_mark">
-                    <AiTwotoneQuestionCircle onClick={()=>setShow(true)} />
+                    <GoQuestion onClick={()=>setShow(true)} />
               <TooltipModal show={show} handleClose={handleClose} tooltip={service.tooltip}/>
                 </div>
                     <div className="service__img">

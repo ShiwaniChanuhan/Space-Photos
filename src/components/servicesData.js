@@ -17,25 +17,14 @@ The standard price includes up to 70 internal scans, £2.16 per extra scan.</li>
   {
     id: 2,
     title: 'Property Photography',
-    image: '/images/quality option.png',
-    tooltip:`<h4><strong>Property Photography - Professional</strong></h4><p>Professional Photo Session offers comprehensive coverage, emphasizing both widest angles and property details, with a choice of images included before editing. Designed to highlight the property and also the details and the finishing touches. </p>
-    <ul><li>Estimated time at the property up to 2 hrs.</li>
-    <li>Choice from 50 images before editing, 25 edited images included</li>
-    <li>Extra images can be edited at £5.40+VAT per image.</li></ul>
-    <strong>Including both Wide-angle and Lifestyle images</strong>
-    <p>Wide-angle Images</p>
-    <ul><li>Professional photo camera</li>
-    <li>With the lens in the range of 14mm – 17mm;</li>
-    <li>Landscape mode.</li>
-    </ul>
-    <p>Lifestyle Images</p>
-    <ul><li>Professional photo camera</li>
-    <li>With the lens in the range of 24mm-70mm;</li>
-    <li>Landscape/Portrait mode.</li>
-    </ul>
-   <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span>Estimated Turnaround Time:</strong> Watermarked unedited Images are to be sent for choosing the
-    next working day from the property visit, once you have chosen your favourites, the final edited images are to be delivered within the next 2 working days.
-   </p> `,
+    image: '/images/camera.png',
+    // tooltip:`<h4><strong>Property Photography - Basic</strong></h4><p>Basic Photography</p>
+    //   <ul><li>Estimated time at the property 45 min - 1h 30 min depending on property size +/-.</li>
+    //   <li>12 final edited images selected by the photographer</li>
+    //   <li>Done by Professional Photo Camera.</li>
+    //   <li>With a lens in the range of 14mm – 17mm.</li>
+    //   <li>Photos are delivered in Landscape mode.</li></ul>
+    //   <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span>Estimated Turnaround Time:</strong>Within the next 2 working days.</p>`,
     options: [
       { label: 'Budget option', selected: false, image:'/images/camera.png',
       tooltip:`<h4><strong>Property Photography - Basic</strong></h4><p>Basic Photography</p>
@@ -46,7 +35,7 @@ The standard price includes up to 70 internal scans, £2.16 per extra scan.</li>
       <li>Photos are delivered in Landscape mode.</li></ul>
       <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span>Estimated Turnaround Time:</strong>Within the next 2 working days.</p>`
        },
-      { label: 'Quality option', selected: true, image: '/images/quality option.png',
+      { label: 'Quality option', selected: false, image: '/images/quality option.png',
         tooltip:`<h4><strong>Property Photography - Professional</strong></h4><p>Professional Photo Session offers comprehensive coverage, emphasizing both widest angles and property details, with a choice of images included before editing. Designed to highlight the property and also the details and the finishing touches. </p>
         <ul><li>Estimated time at the property up to 2 hrs.</li>
         <li>Choice from 50 images before editing, 25 edited images included</li>
@@ -95,19 +84,28 @@ The standard price includes up to 70 internal scans, £2.16 per extra scan.</li>
     id: 4,
     title: 'Floor Plan',
     image: '/images/floorplan.png',
-    tooltip:`<h4><strong>Floorplan - For Illustrative Purposes</strong></h4><p>Visual representation of the property layout and is designed to provide a clear overview of the space. Typically used by estate agents to show the property layout, location and dimensions.</p>
-    <ul><li>Estimated time at the property from 45 min to 1h 30 min depending on property size +/-
-    </li>
-    <li>Standard price includes properties up to 1200 sq.ft, any extra will be charged 6p per sq.ft.
-</li>
-<li>We measure GIA (Gross Internal Area).</li>
-<li>Includes fixed furniture location.</li>    </ul>
-    <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span></strong>Floor plans are for illustrative purposes only and are not drawn to scale, all measurements are approximate.
-    .</p>
-    <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span></strong>For more accurate plans please contact the office as we also do Measured House Surveys.</p>
-    <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span>Estimated Turnaround Time:</strong>Within the next 2 working days.</p>`
-    ,
+    // tooltip: `<h4><strong>HMO Floorplans</strong></h4><p>Detailed, scaled plan with room measurements, fire safety facilities, escape routes, and amenities for HMO licensing.</p>
+    // <ul><li>Estimated time at the property from 45 min to 1h 30 min depending on property size +/-</li>
+    // <li>Standard price includes properties up to 1200 sq.ft, any extra will be charged 6p per sq.ft</li>
+    // <li>Includes fixed furniture location.</li></ul> 
+    // <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span></strong>These plans are for illustrative purposes to support the HMO application. 
+    //    .</p>
+    //    <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span></strong>For more accurate plans please contact the office as we also do Measured House Surveys.
+    //    .</p>
+    // <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span>Estimated Turnaround Time:</strong>Within the next 2 working days.</p>`,
     options: [
+      { label: 'Illustrative', selected: false, image: '/images/floorplan.png',
+      tooltip:`<h4><strong>Floorplan - For Illustrative Purposes</strong></h4><p>Visual representation of the property layout and is designed to provide a clear overview of the space. Typically used by estate agents to show the property layout, location and dimensions.</p>
+      <ul><li>Estimated time at the property from 45 min to 1h 30 min depending on property size +/-<li>
+      <li>Standard price includes properties up to 1200 sq.ft, any extra will be charged 6p per sq.ft.</li>
+      <li>We measure GIA (Gross Internal Area).</li>
+      <li>Includes fixed furniture location.</li></ul>
+      <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span></strong>Floor plans are for illustrative purposes only and are not drawn to scale, all measurements are approximate.
+      .</p>
+      <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span></strong>For more accurate plans please contact the office as we also do Measured House Surveys.</p>
+      <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span>Estimated Turnaround Time:</strong>Within the next 2 working days.</p>`
+      
+     },
       {
         label: 'HMO', selected: false, image: '/images/hmo.png',
         tooltip: `<h4><strong>HMO Floorplans</strong></h4><p>Detailed, scaled plan with room measurements, fire safety facilities, escape routes, and amenities for HMO licensing.</p>
@@ -119,18 +117,7 @@ The standard price includes up to 70 internal scans, £2.16 per extra scan.</li>
         <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span></strong>For more accurate plans please contact the office as we also do Measured House Surveys.
         .</p>
      <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span>Estimated Turnaround Time:</strong>Within the next 2 working days.</p>` },
-      { label: 'Illustrative', selected: true, image: '/images/floorplan.png',
-        tooltip:`<h4><strong>Floorplan - For Illustrative Purposes</strong></h4><p>Visual representation of the property layout and is designed to provide a clear overview of the space. Typically used by estate agents to show the property layout, location and dimensions.</p>
-        <ul><li>Estimated time at the property from 45 min to 1h 30 min depending on property size +/-<li>
-        <li>Standard price includes properties up to 1200 sq.ft, any extra will be charged 6p per sq.ft.</li>
-        <li>We measure GIA (Gross Internal Area).</li>
-        <li>Includes fixed furniture location.</li></ul>
-        <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span></strong>Floor plans are for illustrative purposes only and are not drawn to scale, all measurements are approximate.
-        .</p>
-        <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span></strong>For more accurate plans please contact the office as we also do Measured House Surveys.</p>
-        <p><strong><span style="font-size: 30px; position: relative; top: 0.5rem">*</span>Estimated Turnaround Time:</strong>Within the next 2 working days.</p>`
-        
-       },
+ 
       {
         label: 'Lease Plan', selected: false, image: '/images/lease plan.png',
         tooltip: `<h4><strong>Lease Plan </strong></h4><p>A land registry-compliant plan showing the property location and floor plan, defining boundaries and identifying what areas of the property and land are included in the lease.</p>

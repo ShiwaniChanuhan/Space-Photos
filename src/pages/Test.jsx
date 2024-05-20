@@ -15,25 +15,27 @@ const Test = ({setStep}) => {
   const [totalCost, setTotalCost] = useState(0);
 
   const [packagePrice, setPackagePrice] = useState(0);
-  const [packaged, setPackaged] = useState([]);
-  const [services, setServices] = useState([]);
+  // const [packaged, setPackaged] = useState([]);
+  // const [services, setServices] = useState([]);
   const [additional, setAdditional] = useState([]);
+
 const navigate=useNavigate();
+
   useEffect(() => {
  let serviceCost = 0;
   let packageCost = 0;
 
     selectedServices.forEach((service) => {
-      if (service.type === "service") {
+      if (service?.type === "service") {
         serviceCost += service.price || 0;
-      } else if (service.type === "packaged") {
-        packageCost = service.price || 0;
+      } else if (service?.type === "packaged") {
+        packageCost = service?.price || 0;
 
         const matchingServicesToAdd = selectedServices.filter(
           (individualService) => {
-            if (individualService.type === "service") {
+            if (individualService?.type === "service") {
               return !service.images.some((image) => {
-                if (individualService.image === image) {
+                if (individualService?.image === image) {
                   return individualService;
                 }
               });
@@ -77,7 +79,7 @@ const navigate=useNavigate();
         if (prevSelected.includes(service)) {
           additionalServicesFiltered = updatedSelected.filter(
             (servicedata) =>
-              servicedata.case && servicedata.case !== service.case
+              servicedata?.case && servicedata.case !== service.case
           );
         }
        
@@ -99,23 +101,27 @@ const navigate=useNavigate();
           matchingPackagedService[matchingPackagedService.length - 1];
 
         if (value) {
-          setPackaged([value]);
+      
 
           updatedSelected = [
             value,
 
             ...updatedSelected.filter(
               (service) => service?.type === "service" && service?.new
-            ),
-            ...additionalServicesFiltered,
+            )
+            // ...additionalServicesFiltered
+            
           ];
+          setAdditional(additionalServicesFiltered);
         } else {
           updatedSelected = [
             ...updatedSelected.filter(
               (service) => service?.type === "service" && service?.new
-            ),
-            ...additionalServicesFiltered,
+            )
+            // ...additionalServicesFiltered
+            
           ];
+          setAdditional(additionalServicesFiltered);
         }
       } else if (type === "packaged") {
         let additionalServicesFiltered;
@@ -136,15 +142,16 @@ const navigate=useNavigate();
        
 
           additionalServicesFiltered = updatedSelected.filter((servicedata) => {
-            if (servicedata.case == "camera") {
+            if (servicedata?.case == "camera") {
               return;
-            } else if (servicedata.case == "floor plan") {
+            } else if (servicedata?.case == "floor plan") {
               return;
             } else {
               return servicedata;
             }
           });
           updatedSelected = [...additionalServicesFiltered];
+          setAdditional(additionalServicesFiltered);
         } else {
           let matchingServicesToAdd = servicesData.filter(
             (individualService) => {
@@ -164,9 +171,11 @@ const navigate=useNavigate();
 
           updatedSelected = [
             ...matchingServicesToAdd,
-            service,
-            ...additionalServicesFiltered,
+            service
+            // ...additionalServicesFiltered
+            
           ];
+          setAdditional(additionalServicesFiltered);
         }
       }
 
@@ -174,7 +183,7 @@ const navigate=useNavigate();
     });
   };
 
-  console.log(selectedServices, "sdfsjj");
+  console.log(selectedServices, "sleceted");
 
   return (
     <div className="home">
@@ -248,6 +257,7 @@ const navigate=useNavigate();
                     service={service}
                     isSelected={selectedServices.includes(service)}
                     onSelect={handleServiceSelect}
+                    additional={additional}
                   />
                 ))}
               </div>

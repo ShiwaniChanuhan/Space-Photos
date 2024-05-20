@@ -1,13 +1,20 @@
 // ServiceCard.js
 import React, { useEffect, useState } from "react";
 import TooltipModal from "./modal";
-import { AiTwotoneQuestionCircle } from "react-icons/ai";
+import { GoQuestion } from "react-icons/go";
+
 
 const ServiceCard = ({ service, isSelected, onSelect }) => {
   const [show, setShow] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [dynamicTitle, setDynamicTitle] = useState(service?.title);
-
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOptionImage, setSelectedOptionImage] = useState(
+    service?.image
+  );
+  const [selectedTooltip, setSelectedtooltip] = useState(
+    service?.tooltip
+  );
   useEffect(() => {
     const checkMobileScreen = () => {
       setIsMobile(window.innerWidth <= 500);
@@ -32,37 +39,50 @@ const ServiceCard = ({ service, isSelected, onSelect }) => {
 
   const handleClose = () => setShow(false);
 
-  const handleClick = () => {
-    onSelect(service, "service");
-  };
 
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [selectedOptionImage, setSelectedOptionImage] = useState(
-    service?.image
-  );
-  const [selectedTooltip, setSelectedtooltip] = useState(
-    service?.tooltip
-  );
 
+
+  // useEffect(() => {
+
+  //   if (service.options) {
+  //     const preSelectedOption = service.options.find(
+  //       (option) => option.selected
+  //     );
+  //     if (preSelectedOption) {
+  //       setSelectedOption(preSelectedOption.label);
+    
+  //     }
+  //   }
+  // }, [service.options]);
   useEffect(() => {
-    if (service.options) {
-      const preSelectedOption = service.options.find(
-        (option) => option.selected
-      );
-      if (preSelectedOption) {
-        setSelectedOption(preSelectedOption.label);
-      }
+    // Set first option as selected when service options change
+    if (service.options && service.options.length > 0) {
+      const firstOptionLabel = service.options[0].label;
+      handleOptionClick(firstOptionLabel);
     }
   }, [service.options]);
 
+  const handleClick = () => {
+    onSelect(service, "service");
+   };
+ 
   const handleOptionClick = (option) => {
+ 
     setSelectedOption(option);
     const selectedOptionObj = service.options.find((el) => el.label === option);
     if (selectedOptionObj) {
+      
       setSelectedOptionImage(selectedOptionObj.image);
       setSelectedtooltip(selectedOptionObj.tooltip)
-    }
+
+    
+    
+    } 
   };
+
+
+
+  
 
   return (
     <div className={`booking_cards`}>
@@ -72,7 +92,7 @@ const ServiceCard = ({ service, isSelected, onSelect }) => {
       >
         {/* Render service card content */}
         <div className="question_mark">
-          <AiTwotoneQuestionCircle onClick={() => setShow(true)} />
+          <GoQuestion onClick={() => setShow(true)} />
           <TooltipModal
             show={show}
             handleClose={handleClose}
@@ -94,12 +114,12 @@ const ServiceCard = ({ service, isSelected, onSelect }) => {
               : "property_option"
           }`}
         >
-          {service.options &&
+          {service.options  &&
             service.options.length !== 0 &&
             service.options.map((el) => (
               <div
-                className={`options ${
-                  selectedOption === el.label ? "primary_selection" : ""
+                className={`${service.options.length===2?"cards_option2":"cards_option3"}  ${
+                 isSelected && selectedOption === el.label ? "primary_selection" : ""
                 }`}
                 onClick={() => handleOptionClick(el.label)}
               >
