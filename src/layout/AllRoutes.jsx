@@ -56,7 +56,7 @@ const AllRoutes = () => {
 {/* <Route path="/" element={<Home/>} /> */}
 <Route path="/" element={<Test setStep={setStep}/>} />
 <Route path="/detail" element={<Detail setStep={setStep}/>} />
-<Route path="/finalcheckout" element={<FinalCheckout setStep={setStep}/>} />
+{/* <Route path="/finalcheckout" element={<FinalCheckout setStep={setStep}/>} /> */}
         </Routes>
 
     </div>
